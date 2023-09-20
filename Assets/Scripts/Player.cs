@@ -5,12 +5,18 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     [SerializeField]private float _playerSpeed = 4;
+
+    [SerializeField]private float _jumpForce = 4;
     private float _playerInput;
-    private float _playerInput2;
-    // Start is called before the first frame update
+    //private float _playerInput2;
+
+    private Rigidbody2D _rBody2D;
+    private GroundSensor _sensor;
+
     void Start()
     {
-        
+       _rBody2D = GetComponent<Rigidbody2D>();
+       _sensor = GetComponentInChildren<GroundSensor>(); 
     }
 
     // Update is called once per frame
@@ -18,14 +24,34 @@ public class Player : MonoBehaviour
     {
        PlayerMovement();
 
+       if(Input.GetButtonDown("Jump") && _sensor._isGrounded)
+       {
+           Jump();
+       }
+
         
+    }
+
+    void FixedUpdate()
+    {
+        //_rBody2D.AddForce(new Vector2(_playerInput * _playerSpeed, 0), ForceMode2D.Impulse);
+
+        _rBody2D.velocity = new Vector2(_playerInput * _playerSpeed, _rBody2D.velocity.y);
+
     }
 
     void PlayerMovement()
     {
         _playerInput = Input.GetAxis("Horizontal");
-        _playerInput2 =Input.GetAxis("Vertical");
+        /*_playerInput2 =Input.GetAxis("Vertical");
 
-        transform.Translate(new Vector2(_playerInput, _playerInput2) * _playerSpeed * Time.deltaTime); 
+        transform.Translate(new Vector2(_playerInput, _playerInput2) * _playerSpeed * Time.deltaTime);*/ 
     }
+
+    void Jump()
+    {
+        _rBody2D.AddForce(Vector2.up *_jumpForce, ForceMode2D.Impulse); 
+    }
+
+
 }
