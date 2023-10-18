@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 67748524}
   - component: {fileID: 67748525}
   - component: {fileID: 67748526}
+  - component: {fileID: 67748527}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Untagged
@@ -259,6 +260,36 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &67748527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 67748521}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e52de21a22b6dd44c9cc19f810c65059, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Events:
+    m_Signals:
+    - {fileID: 11400000, guid: bb59f3f943b2d0d49a9e074700fc53d5, type: 2}
+    m_Events:
+    - m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 67748524}
+          m_TargetAssemblyTypeName: Player, Assembly-CSharp
+          m_MethodName: SignalTest
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
 --- !u!1 &279072915
 GameObject:
   m_ObjectHideFlags: 3
@@ -364,7 +395,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &336164005
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -662,6 +693,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1163903376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1163903377}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1163903377
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1163903376}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -8.704841, y: -3.5200639, z: -0.07226077}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1329281815
 GameObject:
   m_ObjectHideFlags: 0
@@ -757,6 +819,7 @@ GameObject:
   - component: {fileID: 1404796622}
   - component: {fileID: 1404796623}
   - component: {fileID: 1404796624}
+  - component: {fileID: 1404796625}
   m_Layer: 0
   m_Name: knight
   m_TagString: Untagged
@@ -852,6 +915,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1404796625
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1404796621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91beea9f72cee994ca716fb56badcadc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1507389657
 GameObject:
   m_ObjectHideFlags: 0
@@ -984,6 +1059,8 @@ PlayableDirector:
     value: {fileID: 336164004}
   - key: {fileID: 3307911141375262948, guid: 253b042eaf369c04d8a8082853efb68b, type: 2}
     value: {fileID: 1676544089}
+  - key: {fileID: -1835082732592718316, guid: 253b042eaf369c04d8a8082853efb68b, type: 2}
+    value: {fileID: 67748527}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &1532187001
@@ -1063,7 +1140,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 4.751447
+  orthographic size: 5.1
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1088,7 +1165,7 @@ Transform:
   m_GameObject: {fileID: 1563399772}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.5920002, y: -5.3634553, z: -9.584816}
+  m_LocalPosition: {x: -4.609579, y: -5.08838, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4235,3 +4312,4 @@ SceneRoots:
   - {fileID: 336164006}
   - {fileID: 1329281816}
   - {fileID: 1676544090}
+  - {fileID: 1163903377}

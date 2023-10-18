@@ -43,6 +43,21 @@ public class Player : MonoBehaviour
          _director.Play();
        }
 
+       _animator.SetBool("IsJumping", !GroundSensor._isGrounded);
+
+       
+        /*if(GroundSensor._isGrounded == true)
+        {
+            _animator.SetBool("IsJumping", false);
+        }
+
+        else
+        {
+            _animator.SetBool("IsJumping", true);
+        }*/
+
+      
+
         
     }
 
@@ -98,7 +113,12 @@ public class Player : MonoBehaviour
     {
         _rBody2D.AddForce(Vector2.up *_jumpForce, ForceMode2D.Impulse); 
 
-        _animator.SetBool("IsJumping", true);
+    }
+
+
+    public void SignalTest()
+    {
+        Debug.Log("Señal recibida");
     }
 
 
