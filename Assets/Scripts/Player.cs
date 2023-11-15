@@ -131,7 +131,14 @@ public class Player : MonoBehaviour
             GameManager.instance.GameOver();
             SoundManager.instance.DeadZone();
         }
+
+        if(this.gameObject.CompareTag("Bomb"))
+        {
+            Destroy(this.gameObject);
+        }
     }
+
+ 
 
 
 
