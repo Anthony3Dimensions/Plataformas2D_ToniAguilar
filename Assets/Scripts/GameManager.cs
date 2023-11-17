@@ -6,6 +6,10 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance {get; private set;}
 
+    public HUD hud;
+
+    public int puntosTotales;
+
     public int vidas;
     // Start is called before the first frame update
     void Awake()
@@ -24,5 +28,12 @@ public class GameManager : MonoBehaviour
     public void GameOver()
     {
         Debug.Log("Game Over");
+    }
+
+    
+    public void SumarPuntos(int puntosASumar)
+    {
+        puntosTotales += puntosASumar;
+        hud.ActualizarPuntos(puntosTotales);
     }
 }

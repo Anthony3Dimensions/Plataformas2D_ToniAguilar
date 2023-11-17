@@ -19,7 +19,7 @@ public class Player : MonoBehaviour
     [SerializeField] private Animator _animator;
     [SerializeField] private PlayableDirector _director;
 
-    private 
+    
 
     void Start()
     {
